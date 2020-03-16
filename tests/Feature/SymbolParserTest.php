@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Jobs\GetSymbolList;
 use App\Services\HttpClient;
+use App\Symbol;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -27,5 +28,6 @@ class SymbolParserTest extends TestCase
             ->andReturn(new Response(200, $this->mockedHeadersForSymbolsParser,
                 file_get_contents(base_path('/tests/Mock/symbolsData.json'))));
         $this->dispatch(new GetSymbolList());
+        $this->assertEquals($this->parsedDataForSymbolsParser, Symbol::select(['symbol', 'name'])->get()->toJson());
     }
 }
