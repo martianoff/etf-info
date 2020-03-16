@@ -18,6 +18,7 @@ class CreateSymbolsTable extends Migration
             $table->string('symbol', 10)->unique();
             $table->string('name', 100)->nullable();
             $table->text('description')->nullable();
+            $table->string('data_source')->nullable();
             $table->timestamps();
         });
     }

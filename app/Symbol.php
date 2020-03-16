@@ -15,7 +15,7 @@ class Symbol extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description',
+        'name', 'description', 'symbol', 'data_source',
     ];
 
     public function countryInformation()

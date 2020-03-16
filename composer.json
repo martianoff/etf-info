@@ -10,9 +10,14 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
+        "guidocella/eloquent-insert-on-duplicate-key": "^2.2",
+        "guzzlehttp/guzzle": "~6.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+        "ext-json": "*",
+        "ext-dom": "*",
+        "ext-libxml": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
