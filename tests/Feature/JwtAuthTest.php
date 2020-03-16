@@ -2,23 +2,13 @@
 
 namespace Tests\Feature;
 
-use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Tests\Traits\MockedDataTrait;
 
 class JwtAuthTest extends TestCase
 {
-    use RefreshDatabase;
-
-    /**
-     * @return User
-     */
-    private function createUser()
-    {
-        return factory(User::class)->create([
-            'name' => 'admin', 'email' => 'admin@app', 'password' => 'admin',
-        ]);
-    }
+    use RefreshDatabase, MockedDataTrait;
 
     /**
      * A basic test example.
